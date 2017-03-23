@@ -1,4 +1,4 @@
-# wasm-TmLanguage
+# WebAssembly-TmLanguage
 
 This repository contains TmLanguage files for WebAssembly that could be used by editors for syntax colorization.
 
