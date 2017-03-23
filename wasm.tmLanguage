@@ -24,6 +24,10 @@
         <key>include</key>
         <string>#constants</string>
       </dict>
+      <dict>
+        <key>include</key>
+        <string>#keywords</string>
+      </dict>
     </array>
     <key>foldingStartMarker</key>
     <string>\(\s*$</string>
@@ -91,6 +95,48 @@
             <string>\b(-?\d+)</string>
             <key>name</key>
             <string>constant.numeric.int.wasm</string>
+          </dict>
+        </array>
+      </dict>
+      <key>keywords</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;=(\s|\(|\[|\{))(block|loop|if|then|else|end)</string>
+            <key>name</key>
+            <string>keyword.control.conditional.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;=(\s|\(|\[|\{))(unreachable|get_local|set_local|tee_local|func|param|result|get_global|set_global|const)</string>
+            <key>name</key>
+            <string>storage.type.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(i32|i64|f32|f64)\b</string>
+            <key>name</key>
+            <string>support.type.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(ctz|clz|popcnt)\b</string>
+            <key>name</key>
+            <string>entity.name.function.unop.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(add|sub|mul)\b</string>
+            <key>name</key>
+            <string>entity.name.function.binop.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(eq|ne|lt)\b</string>
+            <key>name</key>
+            <string>entity.name.function.relop.wasm</string>
           </dict>
         </array>
       </dict>

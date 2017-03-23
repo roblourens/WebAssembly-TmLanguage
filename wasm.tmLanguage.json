@@ -13,6 +13,9 @@
     },
     {
       "include": "#constants"
+    },
+    {
+      "include": "#keywords"
     }
   ],
   "foldingStartMarker": "\\(\\s*$",
@@ -54,6 +57,34 @@
         {
           "match": "\\b(-?\\d+)",
           "name": "constant.numeric.int.wasm"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "(?<=(\\s|\\(|\\[|\\{))(block|loop|if|then|else|end)",
+          "name": "keyword.control.conditional.wasm"
+        },
+        {
+          "match": "(?<=(\\s|\\(|\\[|\\{))(unreachable|get_local|set_local|tee_local|func|param|result|get_global|set_global|const)",
+          "name": "storage.type.wasm"
+        },
+        {
+          "match": "\\b(i32|i64|f32|f64)\\b",
+          "name": "support.type.wasm"
+        },
+        {
+          "match": "\\b(ctz|clz|popcnt)\\b",
+          "name": "entity.name.function.unop.wasm"
+        },
+        {
+          "match": "\\b(add|sub|mul)\\b",
+          "name": "entity.name.function.binop.wasm"
+        },
+        {
+          "match": "\\b(eq|ne|lt)\\b",
+          "name": "entity.name.function.relop.wasm"
         }
       ]
     }
