@@ -63,16 +63,28 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(?<=(\\s|\\(|\\[|\\{))(block|loop|if|then|else|end)",
+          "match": "\\b(block|if|then|else|end)\\b",
           "name": "keyword.control.conditional.wasm"
         },
         {
-          "match": "(?<=(\\s|\\(|\\[|\\{))(unreachable|get_local|set_local|tee_local|func|param|result|get_global|set_global|const)",
-          "name": "storage.type.wasm"
+          "match": "\\b(loop)\\b",
+          "name": "keyword.control.loop.wasm"
+        },
+        {
+          "match": "\\b(import|export)\\b",
+          "name": "keyword.control.import.wasm"
+        },
+        {
+          "match": "\\b(unreachable|get_local|set_local|tee_local|get_global|set_global|const)\\b",
+          "name": "storage.type.op.wasm"
+        },
+        {
+          "match": "\\b(module|func|param|result)\\b",
+          "name": "storage.type.definition.wasm"
         },
         {
           "match": "\\b(i32|i64|f32|f64)\\b",
-          "name": "support.type.wasm"
+          "name": "support.type.datatype.wasm"
         },
         {
           "match": "\\b(ctz|clz|popcnt)\\b",
