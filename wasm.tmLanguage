@@ -153,13 +153,25 @@
           </dict>
           <dict>
             <key>match</key>
+            <string>\b(start)\b</string>
+            <key>name</key>
+            <string>keyword.control.other.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
             <string>\b(get_local|set_local|tee_local|get_global|set_global|const)\b</string>
             <key>name</key>
             <string>storage.type.op.wasm</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(module|func|param|result)\b</string>
+            <string>\b(func|param|result)\b</string>
+            <key>name</key>
+            <string>storage.type.definition.wasm</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(global|table|memory|data|type|elem)\b</string>
             <key>name</key>
             <string>storage.type.definition.wasm</string>
           </dict>
@@ -189,7 +201,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?&lt;=\()module\b</string>
+            <string>(?&lt;=\(\s*)module\b</string>
             <key>name</key>
             <string>storage.type.module.wasm</string>
           </dict>
