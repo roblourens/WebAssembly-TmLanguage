@@ -16,6 +16,9 @@
     },
     {
       "include": "#keywords"
+    },
+    {
+      "include": "#variables"
     }
   ],
   "foldingStartMarker": "\\(\\s*$",
@@ -75,7 +78,11 @@
           "name": "keyword.control.import.wasm"
         },
         {
-          "match": "\\b(unreachable|get_local|set_local|tee_local|get_global|set_global|const)\\b",
+          "match": "\\b(unreachable|nop|br|br_if|br_if_table|return|call|call_indirect|drop)\\b",
+          "name": "keyword.control.flow.wasm"
+        },
+        {
+          "match": "\\b(get_local|set_local|tee_local|get_global|set_global|const)\\b",
           "name": "storage.type.op.wasm"
         },
         {
@@ -97,8 +104,16 @@
         {
           "match": "\\b(eq|ne|lt)\\b",
           "name": "entity.name.function.relop.wasm"
+        },
+        {
+          "match": "(?<=\\()module\\b",
+          "name": "storage.type.module.wasm"
         }
       ]
+    },
+    "variables": {
+      "name": "variable.other.wasm",
+      "match": "(?<=\\s)\\$\\S+\\s"
     }
   }
 }

@@ -7,6 +7,7 @@ patterns:
 - include: '#string'
 - include: '#constants'
 - include: '#keywords'
+- include: '#variables'
 
 foldingStartMarker: '\(\s*$'
 foldingStopMarker: '^\s*\)'
@@ -55,3 +56,8 @@ repository:
         name: entity.name.function.binop.wasm
       - match: \b(eq|ne|lt)\b
         name: entity.name.function.relop.wasm
+      - match: (?<=\()module\b
+        name: storage.type.module.wasm
+  variables:
+    name: variable.other.wasm
+    match: (?<=\s)\$\S+\s
