@@ -25,14 +25,28 @@
   "foldingStopMarker": "^\\s*\\)",
   "repository": {
     "comment": {
-      "name": "comment.line.semicolon.wasm",
-      "begin": ";;",
-      "beginCaptures": {
-        "0": {
-          "name": "punctuation.definition.comment.wasm"
+      "patterns": [
+        {
+          "name": "comment.line.semicolon.wasm",
+          "begin": ";;",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.wasm"
+            }
+          },
+          "end": "$"
+        },
+        {
+          "name": "comment.block.wasm",
+          "begin": "\\(;",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.wasm"
+            }
+          },
+          "end": ";\\)"
         }
-      },
-      "end": "$"
+      ]
     },
     "string": {
       "name": "string.quoted.double.wasm",
